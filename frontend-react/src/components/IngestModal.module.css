@@ -1,0 +1,119 @@
+/* IngestModal.module.css */
+.overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.75);
+  backdrop-filter: blur(8px); z-index: 200;
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.box {
+  width: 480px; max-width: 100%;
+  background: rgba(16,16,30,.98); border: 1px solid var(--border-glow);
+  border-radius: 24px; overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,.6);
+  animation: fade-in .2s ease;
+}
+.header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 22px; border-bottom: 1px solid var(--border);
+}
+.title { font-size: 18px; font-weight: 700; }
+.closeBtn {
+  width: 30px; height: 30px; border-radius: 6px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  color: var(--text-secondary); cursor: pointer;
+  display: flex; align-items: center; justify-content: center; transition: all .15s;
+}
+.closeBtn:hover { color: var(--text-primary); background: var(--bg-card-hover); }
+
+.body { padding: 18px 22px; display: flex; flex-direction: column; gap: 16px; }
+
+.bookCard {
+  display: flex; align-items: center; gap: 14px; padding: 14px;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+}
+.bookIcon { font-size: 38px; flex-shrink: 0; }
+.bookSelect {
+  width: 100%;
+  padding: 6px 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-family: var(--font-he);
+  font-size: 14px;
+  margin-bottom: 3px;
+  outline: none;
+  cursor: pointer;
+  /* Ensure the text wraps or is fully readable */
+  white-space: normal; 
+  word-break: break-all;
+}
+.bookSelect option {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+}
+.bookTitle { font-size: 15px; font-weight: 600; margin-bottom: 3px; word-break: break-all; }
+.bookMeta { font-size: 12px; color: var(--text-muted); }
+
+.options { display: flex; flex-direction: column; gap: 2px; }
+.optRow {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 11px 0; border-bottom: 1px solid var(--border); cursor: pointer;
+}
+.optLabel { font-size: 14px; color: var(--text-secondary); margin-bottom: 2px; }
+.optDesc { font-size: 11px; color: var(--text-muted); }
+
+.toggle { position: relative; display: inline-block; width: 42px; height: 24px; flex-shrink: 0; }
+.toggle input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute; inset: 0; background: rgba(255,255,255,.1);
+  border-radius: 24px; transition: background .2s; cursor: pointer;
+}
+.slider::before {
+  content: ''; position: absolute;
+  width: 18px; height: 18px; border-radius: 50%; background: #fff;
+  top: 3px; left: 3px; transition: transform .2s;
+}
+.toggle input:checked + .slider { background: var(--purple-500); }
+.toggle input:checked + .slider::before { transform: translateX(18px); }
+
+.progress { display: flex; flex-direction: column; gap: 10px; }
+.progressBar {
+  height: 8px; background: rgba(255,255,255,.06); border-radius: 4px; overflow: hidden;
+}
+.fill {
+  height: 100%; background: var(--grad-purple); border-radius: 4px;
+  transition: width .5s ease; position: relative; overflow: hidden;
+}
+.fill::after {
+  content: ''; position: absolute; top: 0; left: -100%; right: 100%;
+  height: 100%; background: linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);
+  animation: shimmer 1.5s infinite;
+}
+.progressMsg { font-size: 13px; color: var(--text-secondary); text-align: center; }
+.summary { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; margin-top: 4px; }
+.summary span { font-size: 13px; color: var(--text-secondary); }
+
+.errorBox {
+  padding: 12px 14px; background: rgba(239,68,68,.1);
+  border: 1px solid rgba(239,68,68,.3); border-radius: 10px;
+  color: #fca5a5; font-size: 13px;
+}
+
+.footer {
+  display: flex; gap: 8px; padding: 14px 22px;
+  border-top: 1px solid var(--border);
+}
+.btnGhost {
+  flex: 1; padding: 10px; border-radius: 8px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  color: var(--text-secondary); font-family: var(--font-he); font-size: 14px;
+  cursor: pointer; transition: all .15s;
+}
+.btnGhost:hover { background: var(--bg-card-hover); color: var(--text-primary); }
+.btnPrimary {
+  flex: 1; padding: 10px; border-radius: 8px;
+  background: var(--grad-purple); border: none;
+  color: #fff; font-family: var(--font-he); font-size: 14px; font-weight: 500;
+  cursor: pointer; box-shadow: 0 4px 15px rgba(109,40,217,.35); transition: all .15s;
+}
+.btnPrimary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(109,40,217,.5); }

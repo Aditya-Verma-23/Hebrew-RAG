@@ -1,0 +1,78 @@
+/* ═══════════════════════════════════════════════════
+   Hebrew RAG – Global Styles
+   Dark glassmorphism · RTL · Purple/Gold palette
+═══════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-base:        #0a0a14;
+  --bg-surface:     #10101e;
+  --bg-card:        rgba(255,255,255,0.04);
+  --bg-card-hover:  rgba(255,255,255,0.07);
+  --border:         rgba(255,255,255,0.08);
+  --border-glow:    rgba(138,92,246,0.4);
+
+  --purple-600:  #7c3aed;
+  --purple-500:  #8b5cf6;
+  --purple-400:  #a78bfa;
+  --purple-300:  #c4b5fd;
+  --gold-500:    #f59e0b;
+  --gold-400:    #fbbf24;
+  --teal-400:    #2dd4bf;
+  --green-500:   #22c55e;
+  --red-500:     #ef4444;
+
+  --grad-purple: linear-gradient(135deg,#8b5cf6,#6d28d9);
+  --grad-gold:   linear-gradient(135deg,#fbbf24,#f59e0b);
+
+  --text-primary:   #f0f0fa;
+  --text-secondary: #a0a0bf;
+  --text-muted:     #5a5a8a;
+
+  --font-he: 'Heebo','Arial Hebrew',Arial,sans-serif;
+  --font-en: 'Inter',system-ui,sans-serif;
+
+  --header-h: 64px;
+  --sidebar-w: 256px;
+  --sources-w: 300px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --ease: cubic-bezier(.4,0,.2,1);
+  --fast: .15s var(--ease);
+  --med:  .25s var(--ease);
+}
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-he);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  min-height: 100vh;
+  direction: rtl;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,.1); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,.2); }
+
+/* Keyframes */
+@keyframes orb-drift { 0%{transform:translate(0,0) scale(1)} 100%{transform:translate(60px,40px) scale(1.1)} }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+@keyframes bounce { 0%,80%,100%{transform:scale(.7);opacity:.5} 40%{transform:scale(1);opacity:1} }
+@keyframes ring-pulse { 0%,100%{opacity:.3;transform:scale(1)} 50%{opacity:.7;transform:scale(1.05)} }
+@keyframes shimmer { to{left:100%;right:-100%} }
+@keyframes toast-in { from{transform:translateY(10px);opacity:0} to{transform:translateY(0);opacity:1} }
+@keyframes fade-in { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+
+/* Utility */
+.sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0; }

@@ -1,0 +1,42 @@
+/* App.module.css */
+.app {
+  min-height: 100vh; display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+}
+
+/* Background orbs */
+.orbs { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+.orb {
+  position: absolute; border-radius: 50%;
+  filter: blur(100px); opacity: .16;
+  animation: orb-drift 18s ease-in-out infinite alternate;
+}
+.orb1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle,#7c3aed,#4c1d95);
+  top: -200px; right: -100px;
+}
+.orb2 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle,#0e7490,#164e63);
+  bottom: -150px; left: -100px;
+  animation-delay: -7s;
+}
+.orb3 {
+  width: 350px; height: 350px;
+  background: radial-gradient(circle,#92400e,#78350f);
+  top: 45%; left: 40%;
+  animation-delay: -13s;
+}
+
+/* Layout */
+.main {
+  display: flex;
+  height: calc(100vh - 64px);
+  margin-top: 64px;
+  position: relative; z-index: 1;
+}
+.chatCol {
+  flex: 1; display: flex; flex-direction: column;
+  min-width: 0; overflow: hidden;
+}
