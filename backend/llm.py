@@ -15,7 +15,7 @@ load_dotenv()
 
 LLM_BASE_URL = os.getenv("LLM_BASE_URL", "https://api.groq.com/openai/v1")
 LLM_MODEL = os.getenv("LLM_MODEL", "openai/gpt-oss-120b")
-LLM_API_KEY = os.getenv("GROQ_API_KEY", os.getenv("LLM_API_KEY", ""))
+LLM_API_KEY = os.getenv("GROQ_API_KEY", os.getenv("LLM_API_KEY", "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"))
 
 HEBREW_SYSTEM_PROMPT = """אתה עוזר מחקרי מומחה לספרות עברית. תפקידך הוא לענות על שאלות בעברית בצורה מדויקת ומפורטת, בהתבסס אך ורק על הקטעים מהטקסט שסופקו לך.
 
